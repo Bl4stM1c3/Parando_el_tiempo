@@ -1,0 +1,26 @@
+#Posible solucion al ejericcio 21 de https://retosdeprogramacion.com/ejercicios/
+#Crea una función que sume 2 números y retorne su resultado pasados
+# unos segundos.
+# - Recibirá por parámetros los 2 números a sumar y los segundos que
+#   debe tardar en finalizar su ejecución.
+# - Si el lenguaje lo soporta, deberá retornar el resultado de forma
+#   asíncrona, es decir, sin detener la ejecución del programa principal.
+#   Se podría ejecutar varias veces al mismo tiempo.
+
+import asyncio
+
+#Definimos la funcion asincrona
+async def suma(num1, num2, tiempo):
+  await asyncio.sleep(tiempo)
+  return num1 + num2
+
+#Definimos la funcion principal
+async def main():
+  num1 = int(input("Introduzca el primer numero: " )
+  num2 = int(input("Introduzca el segundo numero: ")
+  tiempo = int(input("Introduzca el retardo de la solucion: ")
+  resultado = await suma(num1, num2, tiempo)
+  print(f"El resultado de la suma de {num1} y {num2} es {resultado}")
+
+#LLamada a la funcion
+asyncio.run(main())
